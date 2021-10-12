@@ -1,13 +1,15 @@
 import './style.css';
-import { fetchMeals } from './api.js';
+import fetchMeals from './api.js';
+
 const mealIds = [52768, 52776, 52765, 52935, 52960, 52962];
+const container = document.querySelector('.container');
 
 const populate = async () => {
   const data = [];
 
   const mealArray = [];
 
-  await mealIds.forEach(id => data.push(fetchMeals(id)))
+  await mealIds.forEach((id) => data.push(fetchMeals(id)));
   data.forEach((data) => (data.then((meal) => {
     const card = document.createElement('div');
 
@@ -28,9 +30,7 @@ const populate = async () => {
     mealArray.push(meal.meals);
     localStorage.setItem('Meals', JSON.stringify(mealArray));
   })));
-
-  const container = document.querySelector('.container');
-}
+};
 
 document.addEventListener('DOMContentLoaded', async () => {
   await populate();
