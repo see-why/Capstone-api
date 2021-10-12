@@ -12,7 +12,7 @@ html {
   background-color: #943939;
 }
 
-img {
+.logo {
   width: 30%;
 }
 
@@ -24,6 +24,8 @@ ul {
 
 nav {
   display: flex;
+  justify-content: center;
+  margin: 2% 0 2% 0;
 }
 
 li {
@@ -33,6 +35,28 @@ li {
 li a {
   font-size: 20px;
   color: #ffe0a3;
+}
+
+.container {
+  display: grid;
+  justify-content: center;
+  text-align: center;
+  grid-template-columns: 25% 25% 25%;
+  grid-gap: 3rem;
+  height: 5%;
+}
+
+
+
+.foodPic {
+  width: 50%;
+}
+
+button {
+  margin-bottom: 10px;
+  box-shadow: 5px 5px 5px;
+  cursor: pointer;
+  border-radius: 25px;
 }
 
 footer {
