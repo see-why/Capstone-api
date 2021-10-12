@@ -8,7 +8,6 @@
     "coverage": "npx jest --coverage",
     "start": "npx webpack serve --open",
     "build": "npx webpack",
-    "lint": "npx eslint . && npx stylelint **/*.{css,scss} && npx hint .",
     "watch": "npx jest --watchAll"
   },
   "repository": {
@@ -29,7 +28,7 @@
     "jest": "^27.2.3",
     "style-loader": "^3.2.1",
     "webpack": "^5.53.0",
-    "webpack-cli": "^4.8.0",
+    "webpack-cli": "^4.9.0",
     "webpack-dev-server": "^4.2.1"
   }
 }
