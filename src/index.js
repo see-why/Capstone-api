@@ -2,6 +2,7 @@ import './style.css';
 import './reservation.css';
 import './reservation-desktop.css';
 import fetchMeals from './api.js';
+import appID from './involvementApi.js';
 import { addReservationButtonEvent, addCrossImageEvent, addDateFocusEvent } from './reservationEvents.js';
 
 const mealIds = [52768, 52776, 52765, 52935, 52960, 52962];
@@ -37,6 +38,7 @@ const populate = async () => {
 
   addCrossImageEvent();
   addDateFocusEvent();
+  appID();
 };
 
 document.addEventListener('DOMContentLoaded', async () => {
