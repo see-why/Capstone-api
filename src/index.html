@@ -28,7 +28,7 @@
   </main>
 
   <div class="reservation" id="reservation">  
-    <div class="reservation-list d-flex">
+    <div class="reservation-list-div d-flex">
       <div class="meal-img-div d-flex">           
           <img class="meal-img" id="meal-img" alt="meal" src="../circle-cross.png">
           <div class="click">
@@ -37,25 +37,20 @@
       </div>
       <div class="info">        
         <header>  
-          <h1 id="meal-name">Space</h1>
+          <h1 id="meal-name">Meal name</h1>
         </header>
-       <p id="info"> 
-         <strong>Fuel: titanium</strong> &nbsp; <strong>Length: 100,000</strong> <br>
-         <strong>Weight: 400</strong> &nbsp; <strong>Power: 100,000,000</strong> <br>
-      </p>
+       <p id="info"></p>
       </div>
-      <div class="reservation-info">
+      <div class="reservation-info d-flex">
         <header>
-          <h2>Reservations <em>(2)</em></h2>
+          <h2 id="reservations-count">Reservations</h2>
         </header>
-        <p>
-          <em>03/11/2021 - 03/12/2021 by Alex</em> <br>
-          <em>03/14/2021 - 03/16/2021 by Mia</em>
-        </p>
+        <p id="reservations-list" class="reservations-list"></p>
       </div>
       <div class="reservation-form d-flex"> 
         <header>
           <h2>Add a reservation</h2>
+          <p id="info-message"></p>
       </header>
       <fieldset>
           <form id="form" action="#" autocomplete="off" class="form d-flex">
