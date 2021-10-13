@@ -1,11 +1,14 @@
 import './style.css';
+import './comment.css';
 import './reservation.css';
 import './reservation-desktop.css';
 import fetchMeals from './api.js';
 import { addReservationButtonEvent, addCrossImageEvent, addDateFocusEvent } from './reservationEvents.js';
+import {
+  body, container, popup, popupComment, userDataArr, loadCommentsSection,
+} from './commentEvent.js';
 
 const mealIds = [52768, 52776, 52765, 52935, 52960, 52962];
-const container = document.querySelector('.container');
 
 const populate = async () => {
   const data = [];
@@ -25,7 +28,7 @@ const populate = async () => {
                           <a href="#"><i class="fas fa-heart"></i></a>
                         </div>
                         <h4 class="likesNum"></h4>
-                        <button class="comment"><i class="fas fa-comment"></i>  Comment</button>
+                        <button id = "${meal.meals[0].idMeal}" class="comment"><i class="fas fa-comment"></i>  Comment</button>
                         <button class="Reservaton">Reservaton <i class="fa fa-pencil" aria-hidden="true"></i></button>
                       </div>`;
     container.appendChild(card);
@@ -41,4 +44,24 @@ const populate = async () => {
 
 document.addEventListener('DOMContentLoaded', async () => {
   await populate();
+});
+
+container.addEventListener('click', (e) => {
+  if (e.target && e.target.matches('.comment')) {
+    popupComment(e.target);
+    loadCommentsSection(userDataArr);
+  }
+});
+
+body.addEventListener('click', (e) => {
+  if (e.target && e.target.matches('.closepopup')) {
+    const header = document.querySelector('header');
+
+    popup.style.display = 'none';
+    body.style.overflow = 'scroll';
+    container.style.filter = 'blur(0px)';
+    header.style.filter = 'blur(0px)';
+  } else if (e.target && e.target.matches('.comment-btn')) {
+    e.preventDefault();
+  }
 });
