@@ -1,0 +1,16 @@
+@media only screen and (min-width: 992px) {
+  .meal-img-div {
+      height: 600px;
+  }
+
+  .meal-img {
+    height: 600px;
+    width: 600px;
+  }
+
+  .reservation-form,
+  .reservation-info,
+  .info {
+    font-size: larger;
+  }
+}
