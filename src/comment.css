@@ -1,0 +1,209 @@
+body{
+    font-family: 'Poppins', sans-serif;
+  }
+
+
+.popup{
+    display: none;
+  }
+  
+  
+.fa-hat-chef{
+    margin-left: 17rem;
+    margin-bottom: 1rem;
+
+    
+    color:#723e3e;
+    font-size: larger;
+}
+  
+  .popupView {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+      width: 70%;
+      
+  
+  }
+  
+  .popup-child {
+    opacity: 0.9;
+    height: 40rem;
+    padding-top: 1rem;
+    padding-right: 1rem;
+    padding-left: 2rem;
+    border: 2px solid black;
+    background:aliceblue; ;
+    background-size: 100%;
+    border-radius: 2%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  
+  }
+  
+  .popupView .closepopup{
+    float: right;
+    background: none;
+    border: none;
+    box-shadow: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+  
+  .popupView h3{
+  
+    text-align: left;
+    color: #723e3e;
+    margin-left: 2rem;
+  }
+  
+  #comment-btn{
+    
+    padding: 0.5rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+    background: #723e3e;
+    color: aliceblue;
+    border: none;
+    width: 50%;
+    font-weight: bold;
+  
+  }
+  
+  #comment-btn:hover{
+  
+    box-shadow: none;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    background:aliceblue ;
+    color:#723e3e ;
+  
+  }
+  
+  
+  
+  #msg{
+    border: none;
+    background: #ffe0a3;
+    
+    
+  
+  }
+  
+  #msg:active{
+    border: none;
+    background: #ffe0a3;
+    border-radius: 11%;
+  
+  }
+  
+  #msg:focus, #msg:focus{
+    outline: none;
+  }
+  
+  
+  
+  
+  #name{
+    border: none;
+    background: #ffe0a3;
+    width: 14rem;
+    height: 2rem;
+    
+  }
+  
+  .meal-instructions-child{
+    display: none;
+  }
+
+ 
+  
+  .meal-instructions-parent:hover .meal-instructions-child{
+    text-align: left;
+    font-weight: bold;
+    margin: -15rem 1rem;
+    border: 2px solid black;
+    height: auto;
+    position: absolute;
+    z-index: 1;
+    margin-bottom: 10rem;
+    background-color: white;
+    transition: 1s;
+    display: block ;
+  }
+  
+  .user-comments{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(250, 239, 218);
+    align-items: center;
+    justify-content: center;
+    top: 11%;
+    left: 57%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    width: 31%;
+    overflow-y: auto;
+    height: 16rem;
+  
+  }
+  
+  .user-comments li{
+    
+    text-align: center;
+    font-weight: bold;
+    border-bottom: 1px solid #723e3e;
+    height: 15rem;
+    
+  }
+  
+  .comment-section{
+  
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      float: right;
+      margin-top: -20rem;
+      margin-right: 5rem;
+  
+  }
+  
+  .comment-section h4{
+    color: #723e3e;
+  }
+  
+  .comment-section h3{
+    margin: 0;
+  }
+  
+  .popupView .popupimg{
+    border-radius: 10%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: 1rem 1.5rem;
+    width: 20rem;
+  }
+  
+  .mealInfo{
+    list-style: none;
+      width: 19rem;
+      padding: 1.5rem;
+      justify-content: space-between;
+      align-items: center;
+      display: grid;
+      grid-template-columns: 25% 25% 25%;
+      gap: 0.5rem;
+      margin-bottom: 5rem;
+      box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+      background-color: wheat;
+      justify-items: center;
+  
+  }
+  
+  .mealInfo li {
+    
+    font-weight:500;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    padding: 0.5rem;
+    text-align: center;
+    background: #723e3e;
+    border-radius: 6%;
+  
+  }
