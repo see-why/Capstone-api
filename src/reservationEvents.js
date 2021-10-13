@@ -4,7 +4,6 @@ const showPopup = (index) => {
 
   if (localStorage.getItem('Meals') !== null) {
     const arrayOfMeals = JSON.parse(localStorage.getItem('Meals'));
-    console.log(arrayOfMeals);
     const singleMeal = arrayOfMeals.find((meal) => meal[0].idMeal === index);
 
     const h1 = document.getElementById('meal-name');
@@ -25,7 +24,6 @@ const addReservationButtonEvent = () => {
   reservationButtons.forEach((button) => {
     button.addEventListener('click', (e) => {
       const index = e.target.parentNode.id;
-      console.log(index);
       showPopup(index);
     });
   });
