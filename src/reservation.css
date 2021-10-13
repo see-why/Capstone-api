@@ -1,0 +1,92 @@
+fieldset {
+    border: none;
+    width: 30%;
+    padding: 0;
+    justify-self: center;
+  }
+
+.reservation {
+    display: none;
+    z-index: 9;
+    min-width: 100%;
+    min-height: 100%;
+    position: fixed;
+    flex-wrap: wrap;
+    background: #ec5242;
+    justify-content: space-between;
+    margin: auto;
+    top: 0;
+  }
+  
+  .reservation-list {
+    width: 96%;
+    height: 97vh;
+    margin: 2%;
+    border: 1px solid #000;
+    overflow-y: scroll;
+  }
+
+  .div.cross-img-div {
+    max-width: 8%;
+  }
+  
+  .meal-img-div {
+    height: 300px;
+    margin-top: 20px;
+    margin-right: 5%;
+    margin-left: 5%;
+    justify-content: center;
+  }
+  
+  .meal-img {
+    height: 300px;
+    width: 300px;
+    resize: both;
+  }
+
+  .click {
+    position: fixed;
+    right: 7%;
+  }
+
+  .reservation-form,
+  .reservation-info,
+  .info {
+    text-align: center;
+  }
+
+  .reservation-form {
+    align-self: center;
+    width: 300px;
+    margin-bottom: 20px;
+  }
+
+  .reservation,
+  .reservation-list,
+  .reservation-form,
+  .form {
+    flex-direction: column;
+  }
+  
+  .form-item {
+    height: 40px;
+  }
+  
+  .addButton {
+    font-size: 25px;
+  }
+
+  .addButton:hover {
+    cursor: pointer;
+  }
+  
+  .margin-bottom {
+    margin-bottom: 30px;
+  }  
+
+  .d-flex {
+      display: flex;
+  }
+
+
+  
