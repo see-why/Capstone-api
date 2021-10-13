@@ -1,3 +1,34 @@
+import { addReservation, getReservations } from './involvementApi.js';
+
+const addNewScore = (buttonId) => {
+  const nameInput = document.getElementById('player_name');
+  const startDateInput = document.getElementById('player_startDate');
+  const endDateInput = document.getElementById('player_endDate');
+  addReservation(buttonId, nameInput.value, startDateInput.value, endDateInput.value);
+  nameInput.placeholder = 'Your name';
+};
+
+const addProperties = (singleMeal) => {
+  const h1 = document.getElementById('meal-name');
+  h1.innerText = singleMeal[0].strMeal;
+
+  const p = document.getElementById('info');
+  p.innerHTML = `<strong>Region: ${singleMeal[0].strArea}</strong> &nbsp; <strong>Main Ingredient: ${singleMeal[0].strIngredient1}</strong> <br>
+  <strong>Category: ${singleMeal[0].strCategory}</strong> &nbsp; <strong>Tag: ${singleMeal[0].strTags}</strong> <br>`;
+
+  const img = document.getElementById('meal-img');
+  img.src = singleMeal[0].strMealThumb;
+
+  const addButton = document.getElementById('addButton');
+  addButton.name = singleMeal[0].idMeal;
+
+  getReservations(singleMeal[0].idMeal);
+
+  addButton.onclick = async (e) => {
+    await addNewScore(e.target.name);
+  };
+};
+
 const showPopup = (index) => {
   const div = document.getElementById('reservation');
   div.style.display = 'flex';
@@ -6,15 +37,7 @@ const showPopup = (index) => {
     const arrayOfMeals = JSON.parse(localStorage.getItem('Meals'));
     const singleMeal = arrayOfMeals.find((meal) => meal[0].idMeal === index);
 
-    const h1 = document.getElementById('meal-name');
-    h1.innerText = singleMeal[0].strMeal;
-
-    const p = document.getElementById('info');
-    p.innerHTML = `<strong>Region: ${singleMeal[0].strArea}</strong> &nbsp; <strong>Main Ingredient: ${singleMeal[0].strIngredient1}</strong> <br>
-    <strong>Category: ${singleMeal[0].strCategory}</strong> &nbsp; <strong>Tag: ${singleMeal[0].strTags}</strong> <br>`;
-
-    const img = document.getElementById('meal-img');
-    img.src = singleMeal[0].strMealThumb;
+    addProperties(singleMeal);
   }
 };
 
@@ -22,10 +45,10 @@ const addReservationButtonEvent = () => {
   const reservationButtons = document.querySelectorAll('.Reservaton');
 
   reservationButtons.forEach((button) => {
-    button.addEventListener('click', (e) => {
+    button.onclick = (e) => {
       const index = e.target.parentNode.id;
       showPopup(index);
-    });
+    };
   });
 };
 
