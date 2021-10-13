@@ -8,8 +8,9 @@ const popupComment = (eventTarget) => {
   if (mealArray !== null) {
     popup.classList.add('popupView');
     popup.style.display = 'block';
-
-    const tmp = mealArray.findIndex((el) => el[0].idMeal === parseInt(eventTarget.id, 10));
+    /* eslint-disable */
+    const tmp = mealArray.findIndex((el) => el[0].idMeal == parseInt(eventTarget.id, 10));
+    /* eslint-enable */
 
     popup.innerHTML = `<div class ="popup-child"> 
                 <div>
