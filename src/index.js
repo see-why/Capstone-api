@@ -4,12 +4,11 @@ import './reservation.css';
 import './reservation-desktop.css';
 import fetchMeals from './api.js';
 import { addReservationButtonEvent, addCrossImageEvent, addDateFocusEvent } from './reservationEvents.js';
-import {body, container, popup,popupComment,  userDataArr, loadCommentsSection} from './commentEvent.js'
+import {
+  body, container, popup, popupComment, userDataArr, loadCommentsSection,
+} from './commentEvent.js';
 
 const mealIds = [52768, 52776, 52765, 52935, 52960, 52962];
-
-
-
 
 const populate = async () => {
   const data = [];
@@ -43,47 +42,26 @@ const populate = async () => {
   addDateFocusEvent();
 };
 
-
-
-
 document.addEventListener('DOMContentLoaded', async () => {
   await populate();
 });
 
-
-
 container.addEventListener('click', (e) => {
-
-  if(e.target && e.target.matches('.comment')){
-    
+  if (e.target && e.target.matches('.comment')) {
     popupComment(e.target);
     loadCommentsSection(userDataArr);
-
   }
-  
-  
-})
-
+});
 
 body.addEventListener('click', (e) => {
+  if (e.target && e.target.matches('.closepopup')) {
+    const header = document.querySelector('header');
 
-   if (e.target && e.target.matches('.closepopup') ){
-
-      const header  = document.querySelector('header');
-      
-        
-        popup.style.display = 'none';
-        body.style.overflow = 'scroll';
-        container.style.filter = 'blur(0px)';
-        header.style.filter = 'blur(0px)';  
-    
-  }
-
-  else if (e.target && e.target.matches('.comment-btn')){
-
+    popup.style.display = 'none';
+    body.style.overflow = 'scroll';
+    container.style.filter = 'blur(0px)';
+    header.style.filter = 'blur(0px)';
+  } else if (e.target && e.target.matches('.comment-btn')) {
     e.preventDefault();
-      
   }
-
-  
-})
+});

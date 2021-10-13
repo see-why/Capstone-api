@@ -3,19 +3,15 @@ const body = document.querySelector('body');
 const container = document.querySelector('.container');
 
 const popupComment = (eventTarget) => {
+  const mealArray = JSON.parse(localStorage.getItem('Meals'));
 
-    const mealArray =  JSON.parse(localStorage.getItem('Meals'));
+  if (mealArray !== null) {
+    popup.classList.add('popupView');
+    popup.style.display = 'block';
 
-    if(mealArray !== null){
+    const tmp = mealArray.findIndex((el) => el[0].idMeal === parseInt(eventTarget.id, 10));
 
-        popup.classList.add('popupView');
-        popup.style.display = 'block';
-    
-        const tmp = mealArray.findIndex((el) => el[0].idMeal == parseInt(eventTarget.id, 10));
-        
-    
-    
-        popup.innerHTML = `<div class ="popup-child"> 
+    popup.innerHTML = `<div class ="popup-child"> 
                 <div>
                 <ul class="user-comments">
                 
@@ -53,76 +49,50 @@ const popupComment = (eventTarget) => {
                 </form>
                 </div>
                 `;
-    
-                
-    
-                let tagsArr = mealArray[tmp][0].strTags.split(',');
-    
-                for(const tag of tagsArr){
-    
-                if(tag === ''){
-                    continue
-                }
-    
-                else {
-    
-                    let Tagli = document.createElement('li');
-                Tagli.innerHTML += `${tag}`;
-                document.querySelector('.mealInfo').appendChild(Tagli);
-    
-                }
-                
-    
-                }
-    
-                
-            
-                body.style.overflow = 'hidden';
-                container.style.filter = 'blur(5px)';
-                document.querySelector('header').style.filter = 'blur(5px)';
-                
 
-
+    const tagsArr = mealArray[tmp][0].strTags.split(',');
+    /* eslint-disable */
+    for (const tag of tagsArr) {
+      if (tag === '') {
+        continue;
+      } else {
+        const Tagli = document.createElement('li');
+        Tagli.innerHTML += `${tag}`;
+        document.querySelector('.mealInfo').appendChild(Tagli);
+      }
     }
+    /* eslint-enable */
 
-    
-  
-  
-  
+    body.style.overflow = 'hidden';
+    container.style.filter = 'blur(5px)';
+    document.querySelector('header').style.filter = 'blur(5px)';
   }
-
-
-
+};
 
 const loadComment = (name, comment) => {
-
-    const commentInfo = document.createElement('li');
-      commentInfo.innerHTML = `
+  const commentInfo = document.createElement('li');
+  commentInfo.innerHTML = `
       <span class="user">${name}:  </span>
       &nbsp;
       <span class="user_score">${comment}</span>
       `;
-      document.querySelector('.user-comments').appendChild(commentInfo);
-  
-}
-  
-  
-const loadCommentsSection = (userArr) => {
-  
-    userArr.forEach((data) => {
-        loadComment(data.name, data.comment);
-    })
-  
-}
-  
+  document.querySelector('.user-comments').appendChild(commentInfo);
+};
 
-  
-let userCommentData = {
-    name : '',
-    comment : ''
-}
-let userDataArr = JSON.parse(localStorage.getItem('userData')) || [];
+const loadCommentsSection = (userArr) => {
+  userArr.forEach((data) => {
+    loadComment(data.name, data.comment);
+  });
+};
+
+const userCommentData = {
+  name: '',
+  comment: '',
+};
+const userDataArr = JSON.parse(localStorage.getItem('userData')) || [];
 userDataArr.push(userCommentData);
 localStorage.setItem('userData', JSON.stringify(userDataArr));
-  
-export {container,body,popup, popupComment, userDataArr, loadCommentsSection}
+
+export {
+  container, body, popup, popupComment, userDataArr, loadCommentsSection,
+};
