@@ -1,5 +1,8 @@
 import './style.css';
+import './reservation.css';
+import './reservation-desktop.css';
 import fetchMeals from './api.js';
+import { addReservationButtonEvent, addCrossImageEvent, addDateFocusEvent } from './reservationEvents.js';
 
 const mealIds = [52768, 52776, 52765, 52935, 52960, 52962];
 const container = document.querySelector('.container');
@@ -14,7 +17,7 @@ const populate = async () => {
     const card = document.createElement('div');
 
     card.className = 'card';
-    card.innerHTML = `<div class="card">
+    card.innerHTML = `<div class="card" id="${meal.meals[0].idMeal}">
                         <img src="${meal.meals[0].strMealThumb}
                         " alt="meal" class="foodPic">
                         <div class="like">
@@ -26,10 +29,14 @@ const populate = async () => {
                         <button class="Reservaton">Reservaton <i class="fa fa-pencil" aria-hidden="true"></i></button>
                       </div>`;
     container.appendChild(card);
-
     mealArray.push(meal.meals);
+    addReservationButtonEvent();
+
     localStorage.setItem('Meals', JSON.stringify(mealArray));
   })));
+
+  addCrossImageEvent();
+  addDateFocusEvent();
 };
 
 document.addEventListener('DOMContentLoaded', async () => {

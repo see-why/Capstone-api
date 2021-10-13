@@ -11,7 +11,9 @@
 <body>
   <header>
     <nav>
-      <a href="#"><img src="../logo.png" alt="logo" class="logos"></a>
+      
+        <img class="logo" src="../logo_transparent.png" alt="logo">
+   
       <ul>
         <li><a href="#">Home</a></li>
         <li><a href="#">About</a></li>
@@ -24,6 +26,48 @@
     <div class="container">
     </div>
   </main>
+
+  <div class="reservation" id="reservation">  
+    <div class="reservation-list d-flex">
+      <div class="meal-img-div d-flex">           
+          <img class="meal-img" id="meal-img" alt="meal" src="../circle-cross.png">
+          <div class="click">
+            <i class="fas fa-times fa-2x" id="cancel-img"></i>   
+          </div>              
+      </div>
+      <div class="info">        
+        <header>  
+          <h1 id="meal-name">Space</h1>
+        </header>
+       <p id="info"> 
+         <strong>Fuel: titanium</strong> &nbsp; <strong>Length: 100,000</strong> <br>
+         <strong>Weight: 400</strong> &nbsp; <strong>Power: 100,000,000</strong> <br>
+      </p>
+      </div>
+      <div class="reservation-info">
+        <header>
+          <h2>Reservations <em>(2)</em></h2>
+        </header>
+        <p>
+          <em>03/11/2021 - 03/12/2021 by Alex</em> <br>
+          <em>03/14/2021 - 03/16/2021 by Mia</em>
+        </p>
+      </div>
+      <div class="reservation-form d-flex"> 
+        <header>
+          <h2>Add a reservation</h2>
+      </header>
+      <fieldset>
+          <form id="form" action="#" autocomplete="off" class="form d-flex">
+              <input class="form-item margin-bottom" type="text" required placeholder="Your name" id="player_name">
+              <input class="form-item margin-bottom" type="text" required placeholder="Start date" id="player_startDate">
+              <input class="form-item margin-bottom" type="text" required placeholder="End date" id="player_endDate">
+              <input class="form-item addButton" type="submit" value="Reserve" id="addButton">
+          </form>
+      </fieldset>
+      </div>
+    </div>         
+  </div>
 
   <footer>
     <p>Created by Chawanzi, Houssam, Cyril & Microverse under CC license</p>
