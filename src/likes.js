@@ -18,27 +18,27 @@ const mealIds = [52768, 52776, 52765, 52935, 52960, 52962];
 
 const data = [];
 
-const createLikes = async(mealId) => {
+const createLikes = async (mealId) => {
   const response = await fetch(`${baseURL}${appId}/likes/`, {
     method: 'POST',
     body: JSON.stringify({
-      "item_id": mealId,
-      "like": "likes",
-    },),
+      item_id: mealId,
+      like: 'likes',
+    }),
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
     },
   });
   const likes = await response.text();
   return likes;
-}
+};
 
 mealIds.forEach((id) => data.push(createLikes(id)));
 
-const getLikes = async() => {
+const getLikes = async () => {
   const response = await fetch(`${baseURL}${appId}/likes/`);
   const likes = await response.json();
   return likes;
-}
+};
 
 export { createLikes, appID, getLikes };

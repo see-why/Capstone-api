@@ -21,8 +21,9 @@ const populate = async () => {
   await mealIds.forEach((id) => data.push(fetchMeals(id)));
   data.forEach((data) => (data.then((meal) => {
     const card = document.createElement('div');
-    const likesArray = dataLikes.filter((like) =>  like.item_id == meal.meals[0].idMeal);
-
+    /* eslint-disable */
+    const likesArray = dataLikes.filter((like) => like.item_id == meal.meals[0].idMeal);
+    /* eslint-enable */
     card.className = 'card';
     card.innerHTML = `<div class="card" id="${meal.meals[0].idMeal}">
                         <img src="${meal.meals[0].strMealThumb}
