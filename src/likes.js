@@ -7,23 +7,15 @@ async function appID() {
   return id;
 }
 
-const mealIds = [52768, 52776, 52765, 52935, 52960, 52962];
-
-const data = [];
-
 const createLikes = async (mealId) => {
   const response = await fetch(`${baseURL}${appId}/likes/`, {
     method: 'POST',
     body: JSON.stringify({ item_id: mealId }),
-    headers: {
-      'Content-type': 'application/json; charset=UTF-8',
-    },
+    headers: { 'Content-type': 'application/json; charset=UTF-8' },
   });
   const likes = await response.text();
   return likes;
 };
-
-mealIds.forEach((id) => data.push(createLikes(id)));
 
 const getLikes = async () => {
   const response = await fetch(`${baseURL}${appId}/likes/`);
@@ -31,4 +23,16 @@ const getLikes = async () => {
   return likes;
 };
 
-export { createLikes, appID, getLikes };
+const updateLikes = async (eventTarget) => {
+  await createLikes(parseInt(eventTarget.id, 10));
+  let dataLikes = await getLikes();
+  dataLikes = dataLikes.filter((like) => typeof (like.item_id) == 'number');
+  const likesArray = dataLikes.filter((like) => like.item_id == parseInt(eventTarget.id, 10));
+  let count = likesArray[0].likes;
+  count += 1;
+  eventTarget.parentNode.parentNode.lastChild.previousSibling.innerHTML = `${count} likes`;
+};
+
+export {
+  createLikes, appID, getLikes, updateLikes,
+};
