@@ -7,6 +7,7 @@ import { addReservationButtonEvent, addCrossImageEvent, addDateFocusEvent } from
 import {
   body, container, popup, popupComment, userDataArr, loadCommentsSection,
 } from './commentEvent.js';
+import { getLikes } from './likes.js';
 
 const mealIds = [52768, 52776, 52765, 52935, 52960, 52962];
 
@@ -15,10 +16,12 @@ const populate = async () => {
 
   const mealArray = [];
 
-  await mealIds.forEach((id) => data.push(fetchMeals(id)));
+  const dataLikes = await getLikes();
+
+  mealIds.forEach((id) => data.push(fetchMeals(id)));
   data.forEach((data) => (data.then((meal) => {
     const card = document.createElement('div');
-
+    const likesArray = dataLikes.filter((like) => like.item_id.toString() === meal.meals[0].idMeal);
     card.className = 'card';
     card.innerHTML = `<div class="card" id="${meal.meals[0].idMeal}">
                         <img src="${meal.meals[0].strMealThumb}
@@ -27,7 +30,7 @@ const populate = async () => {
                           <h3>${meal.meals[0].strMeal}</h3>
                           <a href="#"><i class="fas fa-heart"></i></a>
                         </div>
-                        <h4 class="likesNum"></h4>
+                        <h4 class="likesNum">${likesArray[0].likes} likes</h4>
                         <button id = "${meal.meals[0].idMeal}" class="comment"><i class="fas fa-comment"></i>  Comment</button>
                         <button class="Reservaton">Reservaton <i class="fa fa-pencil" aria-hidden="true"></i></button>
                       </div>`;
