@@ -6,23 +6,15 @@ body {
   display: none;
 }
 
-.fa-hat-chef {
-  margin-left: 17rem;
-  margin-bottom: 1rem;
-  color: #723e3e;
-  font-size: larger;
-}
-
 .popupView {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -47%);
   width: 70%;
 }
 
 .popup-child {
-  opacity: 0.9;
   height: 40rem;
   padding-top: 1rem;
   padding-right: 1rem;
@@ -49,7 +41,7 @@ body {
   margin-left: 2rem;
 }
 
-#comment-btn {
+.btn-comment {
   padding: 0.5rem;
   box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
   background: #723e3e;
@@ -59,7 +51,7 @@ body {
   font-weight: bold;
 }
 
-#comment-btn:hover {
+.btn-comment:hover {
   box-shadow: none;
   box-shadow: rgba(0, 0, 0, 0.4) 0 2px 4px, rgba(0, 0, 0, 0.3) 0 7px 13px -3px, rgba(0, 0, 0, 0.2) 0 -3px 0 inset;
   background: aliceblue;
@@ -84,8 +76,8 @@ body {
   height: 2rem;
 }
 
-#msg:focus,
-#name:focus {
+#name:focus,
+#msg:focus {
   outline: none;
 }
 
@@ -115,18 +107,41 @@ body {
   align-items: center;
   justify-content: center;
   top: 11%;
-  left: 57%;
+  left: 45%;
   box-shadow: rgba(50, 50, 93, 0.25) 0 2px 5px -1px, rgba(0, 0, 0, 0.3) 0 1px 3px -1px;
-  width: 31%;
+  width: 45%;
+  overflow-x: auto;
   overflow-y: auto;
   height: 16rem;
 }
 
 .user-comments li {
   text-align: center;
-  font-weight: bold;
   border-bottom: 1px solid #723e3e;
   height: 15rem;
+}
+
+.user-comments li .comment_date {
+  font-weight: bold;
+  float: left;
+  margin-right: 2rem;
+  color: rgb(10, 10, 10);
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.user-comments li .user_comment {
+  font-weight: bold;
+  float: right;
+  color: rgb(110, 52, 52);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.user-comments li .user {
+  font-weight: bold;
+  font-size: 0.8rem;
+  margin-left: 1rem;
 }
 
 .comment-section {
@@ -161,7 +176,7 @@ body {
   align-items: center;
   display: grid;
   grid-template-columns: 25% 25% 25%;
-  gap: 0.5rem;
+  gap: 1rem;
   margin-bottom: 5rem;
   box-shadow: rgb(0 0 0 / 24%) 0 3px 8px;
   background-color: wheat;
