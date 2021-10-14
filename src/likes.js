@@ -2,14 +2,7 @@ const baseURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstone
 const appId = '1jTZg5AjMH1qouB9viL2';
 
 async function appID() {
-  const response = await fetch(baseURL,
-    {
-      method: 'POST',
-      body: '{}',
-      headers: {
-        'Content-type': 'application/json',
-      },
-    });
+  const response = await fetch(baseURL, { method: 'POST' });
   const id = await response.text();
   return id;
 }
@@ -21,10 +14,7 @@ const data = [];
 const createLikes = async (mealId) => {
   const response = await fetch(`${baseURL}${appId}/likes/`, {
     method: 'POST',
-    body: JSON.stringify({
-      item_id: mealId,
-      like: 'likes',
-    }),
+    body: JSON.stringify({ item_id: mealId }),
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
     },
