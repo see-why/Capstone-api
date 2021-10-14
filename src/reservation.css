@@ -18,12 +18,11 @@ fieldset {
   top: 0;
 }
 
-.reservation-list {
+.reservation-list-div {
   width: 96%;
   height: 97vh;
   margin: 2%;
   border: 1px solid #000;
-  overflow-y: scroll;
 }
 
 .div.cross-img-div {
@@ -49,6 +48,19 @@ fieldset {
   right: 7%;
 }
 
+.reservations-list {
+  width: 60%;
+  background: #fff;
+  align-self: center;
+  padding: 2%;
+  height: 100px;
+}
+
+.reservation-list-div,
+.reservations-list {
+  overflow-y: scroll;
+}
+
 .reservation-form,
 .reservation-info,
 .info {
@@ -62,7 +74,8 @@ fieldset {
 }
 
 .reservation,
-.reservation-list,
+.reservation-list-div,
+.reservation-info,
 .reservation-form,
 .form {
   flex-direction: column;
