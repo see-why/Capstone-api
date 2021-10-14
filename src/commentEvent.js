@@ -1,3 +1,5 @@
+import { fetchComments } from './comments_api.js';
+
 const popup = document.querySelector('.popup');
 const body = document.querySelector('body');
 const container = document.querySelector('.container');
@@ -46,22 +48,23 @@ const popupComment = (eventTarget) => {
                     <h4>Add your comment</h4>
                     <input type="text" id="name" maxlength="30" name="user_name" placeholder="Full name" required />
                     <textarea maxlength="500" id="msg" name="user_message" placeholder="Your insight" rows="5" cols="5"required></textarea>
-                    <button type="submit" id="comment-btn" class="btn-btn">Comment</button> 
+                    <button type="submit" id="${mealArray[tmp][0].idMeal}" class="btn-comment">Comment</button> 
                 </form>
                 </div>
                 `;
-
-    const tagsArr = mealArray[tmp][0].strTags.split(',');
     /* eslint-disable */
-    for (const tag of tagsArr) {
-      if (tag === '') {
-        continue;
-      } else {
-        const Tagli = document.createElement('li');
-        Tagli.innerHTML += `${tag}`;
-        document.querySelector('.mealInfo').appendChild(Tagli);
-      }
-    }
+    populateComments(mealArray[tmp][0].idMeal);
+    const tagsArr = mealArray[tmp][0].strTags.split(',');
+    
+                for (const tag of tagsArr) {
+                  if (tag === '') {
+                    continue;
+                  } else {
+                    const Tagli = document.createElement('li');
+                    Tagli.innerHTML += `${tag}`;
+                    document.querySelector('.mealInfo').appendChild(Tagli);
+                  }
+                }
     /* eslint-enable */
 
     body.style.overflow = 'hidden';
@@ -70,30 +73,29 @@ const popupComment = (eventTarget) => {
   }
 };
 
-const loadComment = (name, comment) => {
-  const commentInfo = document.createElement('li');
-  commentInfo.innerHTML = `
-      <span class="user">${name}:  </span>
-      &nbsp;
-      <span class="user_score">${comment}</span>
-      `;
-  document.querySelector('.user-comments').appendChild(commentInfo);
-};
+const populateComments = (mealId) => {
+  const commentSection = document.querySelector('.user-comments');
+  while (commentSection.lastElementChild) {
+    commentSection.removeChild(commentSection.lastElementChild);
+  }
 
-const loadCommentsSection = (userArr) => {
-  userArr.forEach((data) => {
-    loadComment(data.name, data.comment);
+  fetchComments(mealId).then((data) => {
+    if (data !== undefined) {
+      data.forEach((comment) => {
+        const commentInfo = document.createElement('li');
+        commentInfo.innerHTML = `
+        <span class="comment_date">${comment.creation_date}</span>
+        <span class="user">${comment.username.toUpperCase()}:  </span>
+        &nbsp;
+        <span class="user_comment">${comment.comment}</span>
+      
+        `;
+        commentSection.appendChild(commentInfo);
+      });
+    }
   });
 };
 
-const userCommentData = {
-  name: '',
-  comment: '',
-};
-const userDataArr = JSON.parse(localStorage.getItem('userData')) || [];
-userDataArr.push(userCommentData);
-localStorage.setItem('userData', JSON.stringify(userDataArr));
-
 export {
-  container, body, popup, popupComment, userDataArr, loadCommentsSection,
+  container, body, popup, popupComment, populateComments,
 };

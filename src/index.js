@@ -4,8 +4,9 @@ import './reservation.css';
 import './reservation-desktop.css';
 import fetchMeals from './api.js';
 import { addReservationButtonEvent, addCrossImageEvent, addDateFocusEvent } from './reservationEvents.js';
+import { createComments } from './comments_api.js';
 import {
-  body, container, popup, popupComment, userDataArr, loadCommentsSection,
+  body, container, popup, popupComment, populateComments,
 } from './commentEvent.js';
 import { getLikes } from './likes.js';
 
@@ -52,11 +53,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 container.addEventListener('click', (e) => {
   if (e.target && e.target.matches('.comment')) {
     popupComment(e.target);
-    loadCommentsSection(userDataArr);
   }
 });
 
-body.addEventListener('click', (e) => {
+body.addEventListener('click', async (e) => {
   if (e.target && e.target.matches('.closepopup')) {
     const header = document.querySelector('header');
 
@@ -64,7 +64,14 @@ body.addEventListener('click', (e) => {
     body.style.overflow = 'scroll';
     container.style.filter = 'blur(0px)';
     header.style.filter = 'blur(0px)';
-  } else if (e.target && e.target.matches('.comment-btn')) {
+  } else if (e.target && e.target.matches('.btn-comment')) {
     e.preventDefault();
+    const userName = document.getElementById('name').value;
+    const userComment = document.getElementById('msg').value;
+
+    if (userName !== '' && userComment !== '') {
+      await createComments(e.target.id, userName, userComment);
+      populateComments(e.target.id);
+    }
   }
 });
