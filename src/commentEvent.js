@@ -75,6 +75,8 @@ const popupComment = (eventTarget) => {
 
 const populateComments = (mealId) => {
   const commentSection = document.querySelector('.user-comments');
+  const commentBtn = document.querySelector('.btn-comment');
+  let count = 0;
   while (commentSection.lastElementChild) {
     commentSection.removeChild(commentSection.lastElementChild);
   }
@@ -91,8 +93,17 @@ const populateComments = (mealId) => {
       
         `;
         commentSection.appendChild(commentInfo);
+        count += 1;
       });
     }
+
+    while (commentBtn.lastElementChild) {
+      commentBtn.removeChild(commentBtn.lastElementChild);
+    }
+    const countSpan = document.createElement('span');
+    countSpan.classList.add('count');
+    countSpan.innerHTML = `&nbsp;&nbsp;${count}`;
+    commentBtn.appendChild(countSpan);
   });
 };
 
