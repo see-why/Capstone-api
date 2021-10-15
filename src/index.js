@@ -58,6 +58,7 @@ body.addEventListener('click', async (e) => {
   if (e.target && e.target.matches('.give-like')) {
     updateLikes(e.target);
   }
+  e.preventDefault();
 });
 
 container.addEventListener('click', (e) => {
