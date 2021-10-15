@@ -32,7 +32,7 @@ body {
 }
 
 .popup-child {
-  height: 190%;
+  height: 198%;
   padding-top: 1rem;
   padding-right: 1rem;
   padding-left: 2rem;
@@ -126,13 +126,13 @@ body {
 }
 
 .user-comments {
-  position: fixed;
+  position: absolute;
   display: flex;
   flex-direction: column;
   background-color: rgb(250, 239, 218);
   align-items: center;
   justify-content: center;
-  top: 113%;
+  top: 117%;
   left: 2.5%;
   box-shadow: rgba(50, 50, 93, 0.25) 0 2px 5px -1px, rgba(0, 0, 0, 0.3) 0 1px 3px -1px;
   width: 90%;
@@ -176,7 +176,7 @@ body {
   flex-direction: column;
   gap: 1rem;
   margin-left: 11rem;
-  padding-top: 15rem;
+  padding-top: 18rem;
   margin-right: 0;
 }
 
@@ -184,7 +184,6 @@ body {
   color: #723e3e;
   text-align: center;
   margin-right: 15rem;
-  margin-top: 1rem;
 }
 
 .comment-section h3 {
