@@ -14,8 +14,8 @@ Additional description about the project and its features.
 - html
 - Javascript
 - Webpack
-- Involvement API
-- 
+- [The Meals Db Api](https://www.themealdb.com/api.php)
+- [The Involvement Api](https://www.notion.so/Involvement-API-869e60b5ad104603aa6db59e08150270)
 
 ## Live Demo
 
@@ -24,24 +24,15 @@ Additional description about the project and its features.
 
 ## Getting Started
 
-**the project comes shipped with linters config for html and css, so ensure you have lighthouse, ESlint, Webhint**
+**The project comes shipped with linters config for html and css, so ensure you have lighthouse, ESlint, Webhint**
 **and Stylelint installed on your local environment**
 
-**To get a local copy of the repository please run the following commands on your terminal:**
-**$ git clone https://github.com/...**
-**$ cd ...**
-**$ git checkout ...**
-**$ run npm install to couple all dependacies**
-**$ Open index.html in your browser or with a live server**
-
-
-### Prerequisites
-
-### Setup
-
-### Install
-
-### Usage
+- **To get a local copy of the repository please run the following commands on your terminal:**
+- **$ git clone https://github.com/...**
+- **$ cd ...**
+- **$ git checkout ...**
+- **$ run npm install to couple all dependacies**
+- **$ run npm start in your terminal or open with a live server**
 
 ### Run tests
 
@@ -57,17 +48,17 @@ Additional description about the project and its features.
 👤 **Cyril Iyadi**
 
 - GitHub: [@see-why](https://github.com/see-why)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/cyril-iyadi-83517270/)
+- LinkedIn: [C.Iyadi](https://www.linkedin.com/in/cyril-iyadi-83517270/)
 
 👤 **Chawanzi Ng'uni**
 
 - GitHub: [@chaw-bot](https://github.com/chaw-bot)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/chawanzi-ng-uni-449328212/)
+- LinkedIn: [C.Ng'uni](https://www.linkedin.com/in/chawanzi-ng-uni-449328212/)
 
 👤 **Houssam Hichami**
 
 - GitHub: [@redwing555](https://github.com/redwing555)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/houssam-hichami-a0aab7175/)
+- LinkedIn: [H.Hichami](https://www.linkedin.com/in/houssam-hichami-a0aab7175/)
 
 
 ## 🤝 Contributing
@@ -82,6 +73,6 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 - [@chaw-bot](https://github.com/chaw-bot) and [@redwing555](https://github.com/redwing555) for an awesome collaboration
-- my dog perry for the comforting lick here and there
+- my dog Perry for the comforting lick here and there
 ## 📝 License
 - This project is [MIT](./LICENSE) licensed.
