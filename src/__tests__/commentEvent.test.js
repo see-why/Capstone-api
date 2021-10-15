@@ -1,8 +1,4 @@
-/**
- * @jest-environment jsdom
- */
-
-import { populateComments } from '../commentEvent';
+import { populateComments } from '../commentEvent.js';
 
 jest.mock('../api');
 
@@ -12,8 +8,5 @@ test('should return correct number of comments', () => {
           + '</div>';
 
   const count = populateComments();
-  count.then((result) => expect(result).toBe(4))
-  /* eslint-disable */
- .catch((error) => console.log('promise rejected'));
- /* eslint-enable */
+  count.then((result) => expect(result).toBe(4));
 });
