@@ -1,0 +1,147 @@
+fieldset {
+  border: none;
+  width: 30%;
+  padding: 0;
+  justify-self: center;
+}
+
+strong {
+  padding: 0.5rem;
+  text-align: center;
+  background: #723e3e;
+  border-radius: 6%;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.reservation {
+  display: none;
+  z-index: 9;
+  min-width: 100%;
+  min-height: 100%;
+  position: fixed;
+  flex-wrap: wrap;
+  background: transparent;
+  justify-content: space-between;
+  margin: auto;
+  top: 0;
+}
+
+.reservation-list-div {
+  width: 96%;
+  height: 97vh;
+  margin: 2%;
+  border: 1px solid #000;
+  background: #fff;
+}
+
+.reservation-list-div h1,
+.reservation-list-div h2,
+.reservation-list-div h3 {
+  color: #723e3e;
+}
+
+.div.cross-img-div {
+  max-width: 8%;
+}
+
+.meal-img-div {
+  height: 322px;
+  margin-top: 20px;
+  margin-right: 5%;
+  margin-left: 5%;
+  margin-bottom: 5%;
+  justify-content: center;
+}
+
+.meal-img {
+  height: 300px;
+  width: 300px;
+  resize: both;
+  padding: 1%;
+  border: 5px solid #723e3e;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 50px;
+  border-bottom-left-radius: 100px;
+}
+
+.click {
+  position: fixed;
+  right: 7%;
+}
+
+.reservations-list {
+  width: 60%;
+  background: rgb(250, 239, 218);
+  align-self: center;
+  padding: 2%;
+  height: 100px;
+}
+
+.info-p {
+  background: wheat;
+  width: 90%;
+  padding: 1%;
+  margin: 0 5%;
+}
+
+.reservation-list-div,
+.reservations-list {
+  overflow-y: scroll;
+}
+
+.reservation-form,
+.reservation-info,
+.info {
+  text-align: center;
+}
+
+.reservation-info header {
+  margin-top: 10px;
+}
+
+.reservation-form {
+  align-self: center;
+  width: 300px;
+  margin-bottom: 20px;
+}
+
+.reservation,
+.reservation-list-div,
+.reservation-info,
+.reservation-form,
+.form {
+  flex-direction: column;
+}
+
+.form-item {
+  height: 40px;
+}
+
+.addButton {
+  font-size: 20px;
+  color: wheat;
+  background: #723e3e;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  padding: 0.5em;
+}
+
+.addButton:hover {
+  cursor: pointer;
+  background: aliceblue;
+  color: #723e3e;
+  box-shadow: rgb(0 0 0 / 40%) 0 2px 4px, rgb(0 0 0 / 30%) 0 7px 13px -3px, rgb(0 0 0 / 20%) 0 -3px 0 inset;
+}
+
+.margin-bottom {
+  margin-bottom: 30px;
+  background: #ffe0a3;
+  border: none;
+}
+
+.d-flex {
+  display: flex;
+}

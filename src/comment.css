@@ -1,0 +1,227 @@
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.popup {
+  display: none;
+}
+
+.popupView {
+  overflow-y: scroll;
+  height: 100%;
+  position: fixed;
+  top: 41%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  width: 80%;
+}
+
+.popupView::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #f5f5f5;
+}
+
+.popupView::-webkit-scrollbar {
+  width: 10px;
+  background-color: #f5f5f5;
+}
+
+.popupView::-webkit-scrollbar-thumb {
+  background-color: #723e3e;
+  border: 2px solid #555;
+}
+
+.popup-child {
+  height: 198%;
+  padding-top: 1rem;
+  padding-right: 1rem;
+  padding-left: 2rem;
+  border: 2px solid black;
+  background: aliceblue;
+
+  /* background-size: 100%; */
+  border-radius: 1%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0 30px 60px -30px, rgba(10, 37, 64, 0.35) 0 -2px 6px 0 inset;
+}
+
+.popupView .closepopup {
+  float: right;
+  background: none;
+  border: none;
+  box-shadow: none;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.popupView h3 {
+  text-align: center;
+  color: #723e3e;
+  margin-left: -4rem;
+}
+
+.btn-comment {
+  padding: 0.5rem;
+  margin-left: 13rem;
+  box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+  background: #723e3e;
+  color: wheat;
+  border: none;
+  width: 20%;
+  font-weight: bold;
+}
+
+.btn-comment .count {
+  color: wheat;
+  font-weight: bold;
+  font-size: large;
+}
+
+.btn-comment:hover {
+  box-shadow: none;
+  box-shadow: rgba(0, 0, 0, 0.4) 0 2px 4px, rgba(0, 0, 0, 0.3) 0 7px 13px -3px, rgba(0, 0, 0, 0.2) 0 -3px 0 inset;
+  background: aliceblue;
+  color: #723e3e;
+}
+
+#msg {
+  border: none;
+  background: #ffe0a3;
+  width: 70%;
+}
+
+#msg:active {
+  border: none;
+  background: #ffe0a3;
+  border-radius: 11%;
+}
+
+#name {
+  border: none;
+  background: #ffe0a3;
+  width: 70%;
+  height: 2rem;
+}
+
+#name:focus,
+#msg:focus {
+  outline: none;
+}
+
+.meal-instructions-child {
+  display: none;
+}
+
+.meal-instructions-parent:hover .meal-instructions-child {
+  text-align: left;
+  font-weight: bold;
+  margin: -15rem 1rem;
+  border: 2px solid black;
+  height: auto;
+  position: absolute;
+  z-index: 1;
+  margin-bottom: 10rem;
+  background-color: white;
+  transition: 1s;
+  display: block;
+}
+
+.user-comments {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(250, 239, 218);
+  align-items: center;
+  justify-content: center;
+  top: 117%;
+  left: 2.5%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0 2px 5px -1px, rgba(0, 0, 0, 0.3) 0 1px 3px -1px;
+  width: 90%;
+  overflow-x: auto;
+  overflow-y: auto;
+  height: 16rem;
+}
+
+.user-comments li {
+  text-align: center;
+  border-bottom: 1px solid #723e3e;
+  height: 15rem;
+}
+
+.user-comments li .comment_date {
+  font-weight: bold;
+
+  /* float: center; */
+  margin-right: 2rem;
+  color: rgb(10, 10, 10);
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.user-comments li .user_comment {
+  font-weight: bold;
+  float: right;
+  color: rgb(110, 52, 52);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.user-comments li .user {
+  font-weight: bold;
+  font-size: 0.8rem;
+  margin-left: 1rem;
+}
+
+.comment-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-left: 11rem;
+  margin-top: 50%;
+  margin-right: 0;
+}
+
+.comment-section h4 {
+  color: #723e3e;
+  text-align: center;
+  margin-right: 15rem;
+}
+
+.comment-section h3 {
+  margin: 0;
+}
+
+.popupView .popupimg {
+  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+  margin: 0 15rem;
+  width: 30rem;
+  padding: 1rem;
+  border-top-right-radius: 10px;
+  border: 5px solid #723e3e;
+  border-top-left-radius: 30px;
+  border-bottom-right-radius: 50px;
+  border-bottom-left-radius: 100px;
+}
+
+.mealInfo {
+  list-style: none;
+  width: 90%;
+  padding: 1.5rem;
+  justify-content: space-around;
+  align-items: center;
+  display: grid;
+  grid-template-columns: 25% 25% 25%;
+  gap: 1rem;
+  margin-bottom: 5rem;
+  box-shadow: rgb(0 0 0 / 24%) 0 3px 8px;
+  background-color: wheat;
+  justify-items: normal;
+}
+
+.mealInfo li {
+  font-weight: 500;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 54px 55px, rgba(0, 0, 0, 0.12) 0 -12px 30px, rgba(0, 0, 0, 0.12) 0 4px 6px, rgba(0, 0, 0, 0.17) 0 12px 13px, rgba(0, 0, 0, 0.09) 0 -3px 5px;
+  padding: 0.5rem;
+  text-align: center;
+  background: #723e3e;
+  border-radius: 6%;
+}
