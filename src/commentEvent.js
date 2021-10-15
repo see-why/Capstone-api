@@ -73,38 +73,42 @@ const popupComment = (eventTarget) => {
   }
 };
 
-const populateComments = (mealId) => {
+const populateComments = async (mealId) => {
   const commentSection = document.querySelector('.user-comments');
   const commentBtn = document.querySelector('.btn-comment');
-  let count = 0;
+
   while (commentSection.lastElementChild) {
     commentSection.removeChild(commentSection.lastElementChild);
   }
 
-  fetchComments(mealId).then((data) => {
-    if (data !== undefined) {
-      data.forEach((comment) => {
-        const commentInfo = document.createElement('li');
-        commentInfo.innerHTML = `
-        <span class="comment_date">${comment.creation_date}</span>
-        <span class="user">${comment.username.toUpperCase()}:  </span>
-        &nbsp;
-        <span class="user_comment">${comment.comment}</span>
-      
-        `;
-        commentSection.appendChild(commentInfo);
-        count += 1;
-      });
-    }
+  let count = 0;
+  const dataArr = await fetchComments(mealId);
 
-    while (commentBtn.lastElementChild) {
-      commentBtn.removeChild(commentBtn.lastElementChild);
-    }
-    const countSpan = document.createElement('span');
-    countSpan.classList.add('count');
-    countSpan.innerHTML = `&nbsp;&nbsp;${count}`;
-    commentBtn.appendChild(countSpan);
+  dataArr.forEach((comment) => {
+    const commentInfo = document.createElement('li');
+
+    commentInfo.innerHTML = `
+            <span class="comment_date">${comment.creation_date}</span>
+            <span class="user">${comment.username.toUpperCase()}:  </span>
+            &nbsp;
+            <span class="user_comment">${comment.comment}</span>
+        
+            `;
+    commentSection.appendChild(commentInfo);
+
+    count += 1;
   });
+
+  while (commentBtn.lastElementChild) {
+    commentBtn.removeChild(commentBtn.lastElementChild);
+  }
+
+  const countSpan = document.createElement('span');
+  countSpan.classList.add('count');
+  countSpan.innerText = `(${count})`;
+  commentBtn.appendChild(countSpan);
+
+  return count;
 };
 
 export {
