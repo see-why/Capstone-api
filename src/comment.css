@@ -45,10 +45,16 @@ body {
   padding: 0.5rem;
   box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
   background: #723e3e;
-  color: aliceblue;
+  color: wheat;
   border: none;
   width: 50%;
   font-weight: bold;
+}
+
+.btn-comment .count {
+  color: wheat;
+  font-weight: bold;
+  font-size: large;
 }
 
 .btn-comment:hover {
