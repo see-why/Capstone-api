@@ -8,7 +8,8 @@ import { createComments } from './comments_api.js';
 import {
   body, container, popup, popupComment, populateComments,
 } from './commentEvent.js';
-import { getLikes, updateLikes } from './likes.js';
+import { getLikes } from './likes.js';
+import updateLikes from './likeEvent.js';
 
 const mealIds = [52768, 52776, 52765, 52935, 52960, 52962];
 
@@ -28,7 +29,6 @@ const populate = async () => {
       (like) => like.item_id == parseInt(meal.meals[0].idMeal, 10),
     );
     /* eslint-enable */
-    card.className = 'card';
     card.innerHTML = `<div class="card" id="${meal.meals[0].idMeal}">
                         <img src="${meal.meals[0].strMealThumb}
                         " alt="meal" class="foodPic">
