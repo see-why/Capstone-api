@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# I-cook
+# i-cook
 
 An awesome display of international dishes where you can make reservations for meals and share comments after you've had a taste or more.
 
@@ -14,6 +14,8 @@ Additional description about the project and its features.
 - html
 - Javascript
 - Webpack
+- Involvement API
+- 
 
 ## Live Demo
 
