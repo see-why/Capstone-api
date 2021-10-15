@@ -10,6 +10,7 @@ const updateLikes = async (eventTarget) => {
   let count = likesArray[0].likes;
   count += 1;
   eventTarget.parentNode.parentNode.lastChild.previousSibling.innerHTML = `${count} likes`;
+  return count;
 };
 
 export default updateLikes;
